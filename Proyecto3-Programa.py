@@ -93,7 +93,7 @@ st.markdown("""
 @st.cache_data
 def cargar_datos():
     try:
-        df = pd.read_csv("interacciones_salud.mental.csv", encoding="latin-1")
+        df = pd.read_csv("interacciones_salud.mental-Rafael.csv", encoding="latin-1")
 
         if "fecha" in df.columns:
             df["fecha"] = pd.to_datetime(df["fecha"], errors="coerce")
@@ -108,7 +108,7 @@ def cargar_datos():
         return df
 
     except FileNotFoundError:
-        st.error("No se encontró el archivo 'interacciones_salud.mental.csv'. Crea uno antes de continuar.")
+        st.error("No se encontró el archivo 'interacciones_salud.mental-Rafael.csv'. Crea uno antes de continuar.")
         columnas = ["usuario", "tipo_interaccion", "contenido", "fecha", "estado_emocional",
                     "categoria", "nivel_intensidad", "respuesta_sugerida"]
         return pd.DataFrame(columns=columnas)
